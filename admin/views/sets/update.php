@@ -9,12 +9,12 @@
                    value="<?php echo isset($_POST['max']) ? $_POST['max'] : $category['max']; ?>"
                    class="form-control"/>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>Số lượng bàn</label>
             <input type="number" name="amount"
                    value="<?php echo isset($_POST['amount']) ? $_POST['amount'] : $category['amount']; ?>"
                    class="form-control"/>
-        </div>
+        </div> -->
 
         <div class="form-group">
             <?php

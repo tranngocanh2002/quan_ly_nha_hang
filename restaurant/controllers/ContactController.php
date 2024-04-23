@@ -18,13 +18,13 @@ class ContactController extends Controller
             // $status = $_POST['status'];
             $message = $_POST['message'];
             if (empty($full_name)) {
-                $this->error = 'Tên không được để trống';
+                $this->error = 'Họ và tên không được để trống';
             } 
-            if (empty($phone)) {
-                $this->error = 'Số điện thoại không được để trống';
-            } 
-            if (empty($email)) {
+            else if (empty($email)) {
                 $this->error = 'Email không được để trống';
+            } 
+            else if (empty($phone)) {
+                $this->error = 'Số điện thoại không được để trống';
             } 
             // if (empty($message)) {
             //     $this->error = 'Message không được để trống';
@@ -40,9 +40,9 @@ class ContactController extends Controller
                 $is_insert = $product_model->insert();
 
                 if ($is_insert) {
-                    $_SESSION['success'] = 'Thêm dữ liệu thành công';
+                    $_SESSION['success'] = 'Quý khách đã gửi thông tin liên hệ thành công, nhân viên sẽ liên hệ đến quý khách trong thời gian sớm nhất';
                 } else {
-                    $_SESSION['error'] = 'Thêm dữ liệu thất bại';
+                    $_SESSION['error'] = 'Quý khách gửi thông tin liên hệ thất bại';
                 }
 
                 header('Location: index.php?controller=contact');

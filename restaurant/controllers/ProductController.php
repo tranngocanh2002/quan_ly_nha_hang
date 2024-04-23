@@ -55,11 +55,9 @@ class ProductController extends Controller {
         $id = $_GET['id'];
         $product_model = new Product();
         $product = $product_model->getById($id);
-        $products_img = $product_model->getByImgId($id);
 
         $this->content = $this->render('views/products/detail.php', [
-            'product' => $product,
-            'products_img' => $products_img
+            'product' => $product
         ]);
         require_once 'views/layouts/main.php';
     }

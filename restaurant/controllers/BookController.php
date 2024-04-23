@@ -21,15 +21,19 @@ class BookController extends Controller
             if (empty($full_name)) {
                 $this->error = 'Tên không được để trống';
             } 
-            if (empty($phone)) {
+            else if (empty($phone)) {
                 $this->error = 'Số điện thoại không được để trống';
             } 
-            if (empty($email)) {
+            else if (empty($email)) {
                 $this->error = 'Email không được để trống';
             } 
-            if (empty($date)) {
+            else if (empty($date)) {
                 $this->error = 'Thời gian ăn không được để trống';
-            } 
+            }
+            $time = date('Y-m-d H:i:s');
+            if ($date < $time) {
+                $this->error = 'Thời gian ăn phải lớn hơn thời gian hiện tại';
+            }
             // if (empty($message)) {
             //     $this->error = 'Message không được để trống';
             // } 
@@ -45,9 +49,9 @@ class BookController extends Controller
                 $is_insert = $product_model->insert();
 
                 if ($is_insert) {
-                    $_SESSION['success'] = 'Thêm dữ liệu thành công';
+                    $_SESSION['success'] = 'Quý khách đã đặt bàn thành công, nhân viên sẽ liên hệ đến quý khách trong thời gian sớm nhất';
                 } else {
-                    $_SESSION['error'] = 'Thêm dữ liệu thất bại';
+                    $_SESSION['error'] = 'Quý khách đặt bàn thất bại';
                 }
 
                 header('Location: index.php?controller=book');

@@ -134,7 +134,6 @@ class ProductController extends Controller
         $id = $_GET['id'];
         $product_model = new Product();
         $product = $product_model->getById($id);
-        $products_img = $product_model->getByImgId($id);
 
 //        echo '<pre>';
 //        var_dump($products_img);
@@ -142,7 +141,6 @@ class ProductController extends Controller
 //        die();
         $this->content = $this->render('views/products/detail.php', [
             'product' => $product,
-            'products_img' => $products_img
         ]);
         require_once 'views/layouts/main.php';
     }
@@ -157,7 +155,6 @@ class ProductController extends Controller
         $id = $_GET['id'];
         $product_model = new Product();
         $product = $product_model->getById($id);
-        $products_img = $product_model->getByImgId($id);
         if (isset($_POST['submit'])) {
             $category_id = $_POST['category_id'];
             $title = $_POST['title'];
@@ -219,7 +216,6 @@ class ProductController extends Controller
         $this->content = $this->render('views/products/update.php', [
             'categories' => $categories,
             'product' => $product,
-            'products_img' => $products_img
         ]);
         require_once 'views/layouts/main.php';
     }

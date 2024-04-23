@@ -43,7 +43,7 @@ class SetController extends Controller
     {
         if (isset($_POST['submit'])) {
             $max = $_POST['max'];
-            $amount = $_POST['amount'];
+            // $amount = $_POST['amount'];
             $status = $_POST['status'];
             if (empty($max)) {
                 $this->error = 'Cần nhập tên';
@@ -51,7 +51,7 @@ class SetController extends Controller
             if (empty($this->error)) {
                 $category_model = new Set();
                 $category_model->max = $max;
-                $category_model->amount = $amount;
+                // $category_model->amount = $amount;
                 $category_model->status = $status;
                 $is_insert = $category_model->insert();
                 if ($is_insert) {

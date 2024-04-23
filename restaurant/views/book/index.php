@@ -1,7 +1,7 @@
 
 
 
-        <div class="container-xxl py-5 bg-dark hero-header mb-5">
+        <div class="container-xxl py-5 bg-dark hero-header mb-5" style="margin: 0 !important;">
             <div class="container text-center my-5 pt-5 pb-4">
                 <h1 class="display-3 text-white mb-3 animated slideInDown">Đặt bàn</h1>
                 <nav aria-label="breadcrumb">
@@ -13,11 +13,36 @@
             </div>
         </div>
         <!-- Navbar & Hero End -->
-
-
+        
+        
         <!-- Reservation Start -->
         <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
             <div class="row g-0">
+                <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger">
+                    <?php
+                    echo $_SESSION['error'];
+                    unset($_SESSION['error']);
+                    ?>
+                </div>
+                <?php endif; ?>
+            
+                <?php if (!empty($this->error)): ?>
+                    <div class="alert alert-danger">
+                        <?php
+                        echo $this->error;
+                        ?>
+                    </div>
+                <?php endif; ?>
+            
+                <?php if (isset($_SESSION['success'])): ?>
+                    <div class="alert alert-success">
+                        <?php
+                        echo $_SESSION['success'];
+                        unset($_SESSION['success']);
+                        ?>
+                    </div>
+                <?php endif; ?>
                 <div class="col-md-6">
                     <div class="video">
                         <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
@@ -33,25 +58,25 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Tên của bạn">
+                                        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Tên của bạn" value="<?php echo isset($_POST['full_name']) ? $_POST['full_name'] : '' ?>">
                                         <label for="full_name">Tên của bạn</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>">
                                         <label for="email">Email</label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-floating">
-                                        <input type="number" class="form-control" id="phone" name="phone" placeholder="Số điện thoại">
+                                        <input type="number" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>">
                                         <label for="phone">Số điện thoại</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="datetime-local" class="form-control datetimepicker-input" id="date" name="date" placeholder="Thời gian ăn" data-target="#date3" data-toggle="datetimepicker" />
+                                        <input type="datetime-local" class="form-control datetimepicker-input" id="date" name="date" placeholder="Thời gian ăn" data-target="#date3" data-toggle="datetimepicker" value="<?php echo isset($_POST['date']) ? $_POST['date'] : '' ?>" />
                                         <label for="date">Thời gian ăn</label>
                                     </div>
                                 </div>
@@ -67,7 +92,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Yêu cầu" id="message" name="message" style="height: 100px"></textarea>
+                                        <textarea class="form-control" placeholder="Yêu cầu" id="message" name="message" style="height: 100px"><?php echo isset($_POST['message']) ? $_POST['message'] : '' ?></textarea>
                                         <label for="message">Yêu cầu</label>
                                     </div>
                                 </div>

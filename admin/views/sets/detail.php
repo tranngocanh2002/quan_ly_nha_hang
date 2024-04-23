@@ -9,10 +9,10 @@
         <th>Số lượng người/bàn</th>
         <td><?php echo $category['max']; ?></td>
     </tr>
-    <tr>
+    <!-- <tr>
         <th>Số lượng bàn</th>
         <td><?php echo $category['amount']; ?></td>
-    </tr>
+    </tr> -->
     <tr>
         <th>Trạng thái</th>
         <td>

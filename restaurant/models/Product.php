@@ -221,17 +221,6 @@ class Product extends Model {
         return $obj_select->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function getByImgId($id)
-    {
-        $obj_select = $this->connection
-            ->prepare("SELECT * FROM products_img 
-          INNER JOIN products ON products_img.products_img_id = products.id WHERE products_img.products_img_id = $id");
-        $arr_select = [];
-        $obj_select->execute($arr_select);
-        $products_img = $obj_select->fetchAll(PDO::FETCH_ASSOC);
-
-        return $products_img;
-    }
 
     public function update($id)
     {

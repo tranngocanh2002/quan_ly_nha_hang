@@ -20,7 +20,7 @@
     <tr>
         <th>ID</th>
         <th>Số lượng người/bàn</th>
-        <th>Số lượng bàn</th>
+        <!-- <th>Số lượng bàn</th> -->
         <th>Status</th>
         <!-- <th>Created_at</th>
         <th>Updated_at</th> -->
@@ -35,9 +35,9 @@
               <td>
                 <?php echo $category['max']; ?>
               </td>
-              <td>
+              <!-- <td>
                 <?php echo $category['amount']; ?>
-              </td>
+              </td> -->
               <td>
                 <?php
                 $status_text = 'Active';

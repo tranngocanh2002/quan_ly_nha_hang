@@ -11,15 +11,15 @@ class Set extends Model {
 
     public function insert() {
         $sql_insert =
-            "INSERT INTO sets(`max`, `amount`, `status`)
-VALUES (:max, :amount, :status)";
+            "INSERT INTO sets(`max`, `status`)
+VALUES (:max,  :status)";
         //cbi đối tượng truy vấn
         $obj_insert = $this->connection
             ->prepare($sql_insert);
         //gán giá trị thật cho các placeholder
         $arr_insert = [
             ':max' => $this->max,
-            ':amount' => $this->amount,
+            // ':amount' => $this->amount,
             ':status' => $this->status
         ];
         return $obj_insert->execute($arr_insert);
@@ -65,11 +65,11 @@ VALUES (:max, :amount, :status)";
 
     public function update($id)
     {
-        $obj_update = $this->connection->prepare("UPDATE sets SET `max` = :max, `amount` = :amount, `status` = :status
+        $obj_update = $this->connection->prepare("UPDATE sets SET `max` = :max, `status` = :status
          WHERE id = $id");
         $arr_update = [
             ':max' => $this->max,
-            ':amount' => $this->amount,
+            // ':amount' => $this->amount,
             ':status' => $this->status,
         ];
 
