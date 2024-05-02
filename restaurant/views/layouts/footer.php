@@ -32,10 +32,10 @@
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Bản tin</h4>
                         <p>Restoran đem đến những món ăn đặc sắc, hấp dẫn và đa dạng, từ những hương vị truyền thống đến những sáng tạo mới lạ.</p>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <!-- <div class="position-relative mx-auto" style="max-width: 400px;">
                             <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                             <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Đăng ký</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
