@@ -8,7 +8,7 @@ require_once 'helpers/Helper.php';
                     <div class="col-lg-6 text-center text-lg-start">
                         <h1 class="display-3 text-white animated slideInLeft">Thưởng thức<br>bữa ăn ngon của chúng tôi</h1>
                         <p class="text-white animated slideInLeft mb-4 pb-2">Restoran đem đến những món ăn đặc sắc, hấp dẫn và đa dạng, từ những hương vị truyền thống đến những sáng tạo mới lạ.</p>
-                        <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Đặt bàn ngay</a>
+                        <a href="index.php?controller=book&action=index" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Đặt bàn ngay</a>
                     </div>
                     <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                         <img class="img-fluid" src="assets/imagers/hero.png" alt="">
