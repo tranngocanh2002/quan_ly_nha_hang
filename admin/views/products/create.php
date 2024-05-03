@@ -1,4 +1,4 @@
-<h2>Thêm mới sản phẩm</h2>
+<h2>Thêm mới thực đơn</h2>
 <form action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="category_id">Chọn danh mục</label>
@@ -16,12 +16,12 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="title">Nhập tên sản phẩm</label>
+        <label for="title">Nhập tên thực đơn</label>
         <input type="text" name="title" value="<?php echo isset($_POST['title']) ? $_POST['title'] : '' ?>"
                class="form-control" id="title"/>
     </div>
     <div class="form-group">
-        <label for="avatar">Ảnh sản phẩm</label>
+        <label for="avatar">Ảnh thực đơn</label>
         <input type="file" name="avatar" value="" class="form-control" id="avatar"/>
         <img src="#" id="" style="display: none" width="100" height="100"/>
     </div>
@@ -41,7 +41,7 @@
                   class="form-control"><?php echo isset($_POST['summary']) ? $_POST['summary'] : '' ?></textarea>
     </div>
     <!-- <div class="form-group">
-        <label for="description">Mô tả chi tiết sản phẩm</label>
+        <label for="description">Mô tả chi tiết thực đơn</label>
         <textarea name="content" id="description"
                   class="form-control"><?php echo isset($_POST['content']) ? $_POST['content'] : '' ?></textarea>
     </div> -->

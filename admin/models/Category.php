@@ -10,6 +10,15 @@ class Category extends Model {
     public $status;
     public $created_at;
     public $updated_at;
+    public $str_search = '';
+
+    public function __construct()
+    {
+        parent::__construct();
+        if (isset($_GET['name']) && !empty($_GET['name'])) {
+            $this->str_search .= " AND categories.name LIKE '%{$_GET['name']}%'";
+        }
+    }
 
     public function insert() {
         $sql_insert =
@@ -108,9 +117,10 @@ VALUES (:name, :description, :loca, :status)";
         $page = $params['page'];
         $start = ($page - 1) * $limit;
         $obj_select = $this->connection
-            ->prepare("SELECT * FROM categories ORDER BY loca ASC LIMIT $start, $limit");
+            ->prepare("SELECT * FROM categories WHERE TRUE $this->str_search ORDER BY updated_at DESC LIMIT $start, $limit");
 
-        $obj_select->execute();
+        $arr_select = [];
+        $obj_select->execute($arr_select);
         $categories = $obj_select->fetchAll(PDO::FETCH_ASSOC);
 
         return $categories;

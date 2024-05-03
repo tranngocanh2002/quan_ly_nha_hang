@@ -4,8 +4,8 @@ require_once 'helpers/Helper.php';
 <form method="GET" action="">
     <div class="form-group">
         <label for="first_name">Tên người dùng</label>
-        <input type="text" name="first_name" id="first_name"
-               value="<?php echo isset($_GET['first_name']) ? $_GET['first_name'] : '' ?>" class="form-control"/>
+        <input type="text" name="full_name" id="full_name"
+               value="<?php echo isset($_GET['full_name']) ? $_GET['full_name'] : '' ?>" class="form-control"/>
         <input type="hidden" name="controller" value="contact"/>
         <input type="hidden" name="action" value="index"/>
     </div>
@@ -56,6 +56,9 @@ require_once 'helpers/Helper.php';
             </tr>
         <?php endforeach; ?>
     <?php else: ?>
+        <tr>
+            <td colspan="9">No data found</td>
+        </tr>
     <?php endif; ?>
 </table>
 <?php echo $pages; ?>

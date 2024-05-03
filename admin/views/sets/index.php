@@ -1,4 +1,4 @@
-<form action="" method="get">
+<!-- <form action="" method="get">
     <input type="hidden" name="controller" value="set"/>
     <input type="hidden" name="action" value="index"/>
     <div class="form-group">
@@ -10,7 +10,7 @@
         <input type="submit" name="submit" value="Tìm kiếm" class="btn btn-primary"/>
         <a href="index.php?controller=set" class="btn btn-secondary">Xóa filter</a>
     </div>
-</form>
+</form> -->
 
 <h1>Danh sách bàn</h1>
 <a href="index.php?controller=set&action=create" class="btn btn-success">

@@ -1,7 +1,7 @@
 <?php
 require_once 'helpers/Helper.php';
 ?>
-<form method="GET" action="">
+<!-- <form method="GET" action="">
     <div class="form-group">
         <label for="first_name">Tên người dùng</label>
         <input type="text" name="first_name" id="first_name"
@@ -13,7 +13,7 @@ require_once 'helpers/Helper.php';
         <input type="submit" value="Tìm kiếm" name="search" class="btn btn-primary"/>
         <a href="index.php?controller=contact" class="btn btn-default">Xoá</a>
     </div>
-</form>
+</form> -->
 <h1>Thêm mới bàn</h1>
 <a href="index.php?controller=set&action=create" class="btn btn-success">
     <i class="fa fa-plus"></i> Thêm mới

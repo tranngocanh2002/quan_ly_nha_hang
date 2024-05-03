@@ -4,7 +4,7 @@ require_once 'helpers/Helper.php';
 <!--form search-->
 <form action="" method="GET">
     <div class="form-group">
-        <label for="title">Nhập title</label>
+        <label for="title">Nhập tên thực đơn</label>
         <input type="text" name="title" value="<?php echo isset($_GET['title']) ? $_GET['title'] : '' ?>" id="title"
                class="form-control"/>
     </div>
@@ -28,7 +28,7 @@ require_once 'helpers/Helper.php';
     <input type="hidden" name="controller" value="product"/>
     <input type="hidden" name="action" value="index"/>
     <input type="submit" name="search" value="Tìm kiếm" class="btn btn-primary"/>
-    <a href="index.php?controller=product" class="btn btn-default">Xóa filter</a>
+    <a href="index.php?controller=product" class="btn btn-default">Xóa bộ loc</a>
 </form>
 
 
@@ -39,14 +39,14 @@ require_once 'helpers/Helper.php';
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
-        <th>Category name</th>
-        <th>Title</th>
-        <th>Avatar</th>
-        <th>Price</th>
+        <th>Tên danh mục</th>
+        <th>Tên thực đơn</th>
+        <th>Ảnh</th>
+        <th>Giá</th>
         <!-- <th>Amount</th> -->
-        <th>Status</th>
-        <th>Created_at</th>
-        <th>Updated_at</th>
+        <th>Trạng thái</th>
+        <th>Thời gian tạo</th>
+        <th>Thời gian cập nhật</th>
         <th></th>
     </tr>
     <?php if (!empty($products)): ?>

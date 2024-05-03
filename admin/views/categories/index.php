@@ -8,11 +8,11 @@
     </div>
     <div class="form-group">
         <input type="submit" name="submit" value="Tìm kiếm" class="btn btn-primary"/>
-        <a href="index.php?controller=category" class="btn btn-secondary">Xóa filter</a>
+        <a href="index.php?controller=category" class="btn btn-secondary">Xóa bộ lọc</a>
     </div>
 </form>
 
-<h1>Danh sách category</h1>
+<h1>Danh sách danh mục</h1>
 <a href="index.php?controller=category&action=create" class="btn btn-success">
     <i class="fa fa-plus"></i> Thêm mới
 </a>

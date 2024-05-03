@@ -8,8 +8,8 @@ class ContactController extends Controller {
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         $total = $user_model->getTotal();
         $query_additional = '';
-        if (isset($_GET['username'])) {
-            $query_additional .= "&username=" . $_GET['username'];
+        if (isset($_GET['full_name'])) {
+            $query_additional .= "&full_name=" . $_GET['full_name'];
         }
         $params = [
             'total' => $total,
@@ -52,7 +52,7 @@ class ContactController extends Controller {
                 $this->error = 'Email không đúng định dạng';
             }
             if (empty($this->error)) {
-                $user_model->first_name = $first_name;
+                // $user_model->first_name = $first_name;
                 $user_model->subject = $subject;
                 $user_model->phone = $phone;
                 $user_model->email = $email;
